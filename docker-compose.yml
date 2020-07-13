@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webhook:
+    container_name: webhook
+    build: .
+    restart: always
+    ports:
+      - "9000:9000" # map docker port 9000 to host ip 9000
+    volumes:
+      - "/home/CHANGEME/webhook/hooks.json:/etc/webhook/hooks.json" 
+      - "/home/CHANGEME/webhook/scripts:/scripts" 
+      - "/home/CHANGEME/website:/home/CHANGEME/website" #used as a example to checkout the latest code from git when git action is completedy

@@ -1,0 +1,16 @@
+[{
+"id": "download-after-github-action-is-completed",
+"execute-command": "/scripts/deploy.sh",
+"command-working-directory": "/home/CHANGEME/website",
+"response-message": "Woho, github action is completed, will pull the code...",
+"trigger-rule": {
+"match": {
+"type": "payload-hash-sha1",
+"secret": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+"parameter": {
+"source": "header",
+"name": "X-Hub-Signature"
+}
+}
+}
+}]
